@@ -12,16 +12,16 @@ let choice = await question(
   `(${chalk.blue('b')}/${chalk.blue('c')}/${chalk.blue('N')}) `
 );
 if (['b', 'B'].includes(choice)) {
-  const htmlUrl =
-    await $`jq '.[] | select(.name == \"${repo}\") | .html_url'< ${filePath} | tr -d '"'`.then(
-      x => new URL(x.stdout)
-    );
+  const htmlUrl = await getRepoProperty('html_url').then(
+    x => new URL(x.stdout)
+  );
   await $`open ${htmlUrl.href}`;
 }
 if (['c', 'C'].includes(choice)) {
-  const sshUrl =
-    await $`jq '.[] | select(.name == \"${repo}\") | .ssh_url'< ${filePath} | tr -d '"'`.then(
-      x => x.stdout.trim()
-    );
+  const sshUrl = await getRepoProperty('ssh_url').then(x => x.stdout.trim());
   await $`git clone ${sshUrl}`;
+}
+
+async function getRepoProperty(prop) {
+  return await $`jq '.[] | select(.name == \"${repo}\") | .${prop}'< ${filePath} | tr -d '"'`;
 }
