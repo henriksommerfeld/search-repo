@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "refresh": "zx index.mjs"
+    "refresh": "zx refresh.mjs",
+    "search": "zx search.mjs $(./search.sh)"
   },
   "repository": {
     "type": "git",

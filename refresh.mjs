@@ -1,8 +1,9 @@
 #!/usr/bin/env zx
+import { filePath } from './shared.mjs';
 
 $.verbose = false;
 
-console.log(chalk.blue("Fetching repos..."));
+console.log(chalk.blue('Fetching repos...'));
 
 const repos = new Array();
 
@@ -18,7 +19,7 @@ for (let i = 1; true; i++) {
   }
 }
 
-const mappedRepos = repos.flat().map((x) => ({
+const mappedRepos = repos.flat().map(x => ({
   id: x.id,
   name: x.name,
   html_url: x.html_url,
@@ -26,7 +27,6 @@ const mappedRepos = repos.flat().map((x) => ({
   ssh_url: x.ssh_url,
 }));
 
-const filePath = `${os.homedir()}/repos.json`;
 fs.ensureFileSync(filePath);
 fs.writeJsonSync(filePath, mappedRepos);
 console.log(
