@@ -6,7 +6,7 @@ $.verbose = false;
 const repo = argv._[1];
 console.log('What do you want to do?');
 console.log(` (${chalk.blue('b')}) Browse repo on github.com `);
-console.log(` (${chalk.blue('c')}) Clone`);
+console.log(` (${chalk.blue('c')}) Clone (using ssh)`);
 console.log(` (${chalk.blue('n')}) Nothing`);
 let choice = await question(
   `(${chalk.blue('b')}/${chalk.blue('c')}/${chalk.blue('N')}) `
