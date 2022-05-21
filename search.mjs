@@ -16,12 +16,12 @@ if (['b', 'B'].includes(choice)) {
     await $`jq '.[] | select(.name == \"${repo}\") | .html_url'< ${filePath} | tr -d '"'`.then(
       x => new URL(x.stdout)
     );
-  await $`open "${htmlUrl.href}"`;
+  await $`open ${htmlUrl.href}`;
 }
 if (['c', 'C'].includes(choice)) {
   const sshUrl =
-    await $`jq '.[] | select(.name == \"${repo}\") | .ssh_url'< ${filePath}`.then(
-      x => x.stdout
+    await $`jq '.[] | select(.name == \"${repo}\") | .ssh_url'< ${filePath} | tr -d '"'`.then(
+      x => x.stdout.trim()
     );
   await $`git clone ${sshUrl}`;
 }
