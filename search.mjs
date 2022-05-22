@@ -4,6 +4,9 @@ import { filePath } from './shared.mjs';
 
 $.verbose = false;
 const repo = argv._[1];
+if (!repo) {
+  process.exit();
+}
 console.log('What do you want to do?');
 console.log(` (${chalk.blue('b')}) Browse repo on github.com `);
 console.log(` (${chalk.blue('c')}) Clone (using ssh)`);
