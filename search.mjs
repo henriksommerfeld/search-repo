@@ -25,7 +25,9 @@ if (["b", "B"].includes(choice)) {
 }
 if (["c", "C"].includes(choice)) {
   const sshUrl = await getRepoProperty("ssh_url").then((x) => x.stdout.trim());
-  await $`git clone ${sshUrl}`;
+  const currentFolder = process.env.SEARCH_REPO_FOLDER;
+  console.log(`Cloning ${sshUrl}...`);
+  await $`cd ${currentFolder};  git clone ${sshUrl}`;
 }
 
 async function getRepoProperty(prop) {
