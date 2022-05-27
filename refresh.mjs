@@ -19,8 +19,7 @@ for (let i = 1; true; i++) {
   }
 }
 
-const mappedRepos = repos.flat().map(x => ({
-  id: x.id,
+const mappedRepos = repos.flat().map((x) => ({
   name: x.name,
   html_url: x.html_url,
   description: x.description,
@@ -30,5 +29,5 @@ const mappedRepos = repos.flat().map(x => ({
 fs.ensureFileSync(filePath);
 fs.writeJsonSync(filePath, mappedRepos);
 console.log(
-  chalk.green(`${mappedRepos.length} repos now in index ${filePath}`)
+  chalk.green(`${mappedRepos.length} repos now in index ${filePath}`),
 );
