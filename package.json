@@ -2,7 +2,6 @@
   "name": "repo-search",
   "version": "1.0.0",
   "description": "",
-  "main": "index.mjs",
   "scripts": {
     "refresh": "zx refresh.mjs",
     "search": "zx search.mjs $(./search.sh)"
