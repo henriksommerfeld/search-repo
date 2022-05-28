@@ -8,15 +8,16 @@ This repository contains glue code for finding repositories on GitHub that you o
 ## Dependencies
 
 - [BASH](<https://en.wikipedia.org/wiki/Bash_(Unix_shell)>)
-- [🐚 zx](https://github.com/google/zx)
 - [GitHub CLI](https://cli.github.com/)
 - [fzf](https://github.com/junegunn/fzf)
 - [jq](https://stedolan.github.io/jq/)
 
+Eventhough this is written using [🐚 zx](https://github.com/google/zx), that's not a direct dependency. It can be installed _either_ globally _or_ as a part of `npm install` in this repo.
+
 ## Installation
 
 1. `npm install`
-2. Add aliases for invoking the npm scripts in this repo. I have the following in my `~/.zshrc`:
+2. Add alias/function for invoking the npm scripts in this repo. I have the following in my `~/.zshrc`:
 
 ```
 alias refresh-repo="npm run refresh --prefix ~/kod/personligt/search-repo"
