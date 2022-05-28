@@ -13,6 +13,7 @@
   "author": "Henrik Sommerfeld",
   "license": "MIT",
   "dependencies": {
+    "open": "^8.4.0",
     "zx": "^6.1.0"
   }
 }

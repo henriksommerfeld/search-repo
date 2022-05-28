@@ -1,5 +1,6 @@
 #!/usr/bin/env zx
 import { filePath } from './shared.mjs'
+import open from 'open'
 
 $.verbose = false
 const repo = argv._[1]
@@ -8,21 +9,17 @@ if (!repo) {
   process.exit()
 }
 console.log('What do you want to do?')
-console.log(` (${chalk.blue('b')}) Browse repo`)
+console.log(` (${chalk.blue('o')}) Open repo in web browser`)
 console.log(` (${chalk.blue('c')}) Clone (using ssh)`)
 console.log(` (${chalk.blue('n')}) Nothing`)
 let choice = await question(
   `(${chalk.blue('b')}/${chalk.blue('c')}/${chalk.blue('N')}) `,
 )
-if (['b', 'B'].includes(choice)) {
+if (['o', 'O'].includes(choice)) {
   const htmlUrl = await getRepoProperty('html_url').then(
     (x) => new URL(x.stdout),
   )
-  try {
-    await $`open ${htmlUrl.href}`
-  } catch (err) {
-    console.log(htmlUrl.href)
-  }
+  await open(htmlUrl.href)
 }
 if (['c', 'C'].includes(choice)) {
   const sshUrl = await getRepoProperty('ssh_url').then((x) => x.stdout.trim())
