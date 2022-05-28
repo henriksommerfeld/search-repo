@@ -3,6 +3,7 @@ import { filePath } from "./shared.mjs";
 
 $.verbose = false;
 const repo = argv._[1];
+const currentFolder = argv._[2];
 if (!repo) {
   process.exit();
 }
@@ -25,12 +26,10 @@ if (["b", "B"].includes(choice)) {
 }
 if (["c", "C"].includes(choice)) {
   const sshUrl = await getRepoProperty("ssh_url").then((x) => x.stdout.trim());
-  const currentFolder = process.env.SEARCH_REPO_FOLDER;
   console.log(`Cloning ${sshUrl}...`);
   await $`cd ${currentFolder};  git clone ${sshUrl}`;
 }
 
 async function getRepoProperty(prop) {
-  return await $
-    `jq '.[] | select(.name == \"${repo}\") | .${prop}'< ${filePath} | tr -d '"'`;
+  return await $`jq '.[] | select(.name == \"${repo}\") | .${prop}'< ${filePath} | tr -d '"'`;
 }
