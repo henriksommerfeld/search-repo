@@ -19,8 +19,10 @@ This repository contains glue code for finding repositories on GitHub that you o
 2. Add aliases for invoking the npm scripts in this repo. I have the following in my `~/.zshrc`:
 
 ```
-alias repo="npm run search --prefix ~/code/search-repo"
-alias refresh-repo="npm run refresh --prefix ~/code/search-repo"
+alias refresh-repo="npm run refresh --prefix ~/kod/personligt/search-repo"
+repo() {
+  npm run search --prefix ~/kod/personligt/search-repo $(pwd)
+}
 ```
 
 ## Usage
@@ -31,6 +33,10 @@ There are two commands to run, one that fetches the repos' metadata and one that
 
 `$ refresh-repo`
 
+![Refresh index of repositories](./refresh-index.gif)
+
 ### Searching
 
 `$ repo`
+
+![Search repositories locally](./search.gif)
