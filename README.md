@@ -3,7 +3,7 @@
 This repository contains glue code for finding repositories on GitHub that you or your organisation owns. In short, it does the following:
 
 1. Downloads metadata of all the repositories on GitHub associated with your account and saves a subset of the properties into ~/repos.json
-2. Provies a way of searching that local file to quickly find a repo for cloning or opening the asociated web page.
+2. Provides a way of searching that local file to quickly find a repo for cloning or opening the associated web page.
 
 ## Dependencies
 
@@ -12,7 +12,7 @@ This repository contains glue code for finding repositories on GitHub that you o
 - [fzf](https://github.com/junegunn/fzf)
 - [jq](https://stedolan.github.io/jq/)
 
-Eventhough this is written using [🐚 zx](https://github.com/google/zx), that's not a direct dependency. It can be installed _either_ globally _or_ as a part of `npm install` in this repo.
+Even though this is written using [🐚 zx](https://github.com/google/zx), that's not a direct dependency. It can be installed _either_ globally _or_ as a part of `npm install` in this repo.
 
 ## Installation
 
