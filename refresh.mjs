@@ -21,8 +21,9 @@ for (let i = 1; true; i++) {
 
 const mappedRepos = repos.flat().map((x) => ({
   name: x.name,
-  html_url: x.html_url,
   description: x.description,
+  private: x.private,
+  html_url: x.html_url,
   ssh_url: x.ssh_url,
 }))
 
