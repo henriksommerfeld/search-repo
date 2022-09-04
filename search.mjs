@@ -13,7 +13,7 @@ console.log(` (${chalk.blue('o')}) Open repo in web browser`)
 console.log(` (${chalk.blue('c')}) Clone (using ssh)`)
 console.log(` (${chalk.blue('n')}) Nothing`)
 let choice = await question(
-  `(${chalk.blue('b')}/${chalk.blue('c')}/${chalk.blue('N')}) `,
+  `(${chalk.blue('o')}/${chalk.blue('c')}/${chalk.blue('N')}) `,
 )
 if (['o', 'O'].includes(choice)) {
   const htmlUrl = await getRepoProperty('html_url').then(
