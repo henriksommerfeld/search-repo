@@ -11,9 +11,10 @@ This repository contains glue code for finding repositories on GitHub that you o
 - [GitHub CLI](https://cli.github.com/)
 - [fzf](https://github.com/junegunn/fzf)
 - [jq](https://stedolan.github.io/jq/)
-
+- bat
 
 Even though this is written using [🐚 zx](https://github.com/google/zx), that's not a direct dependency. It can be installed _either_ globally _or_ as a part of `npm install` in this repo.
+
 ## Installation
 
 1. `npm install`
