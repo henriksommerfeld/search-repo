@@ -25,6 +25,9 @@ alias refresh-repo="npm run refresh --prefix ~/kod/personligt/search-repo"
 repo() {
   npm run search --prefix ~/kod/personligt/search-repo $(pwd)
 }
+web-repo() {
+  npm run open --prefix ~/kod/personligt/search-repo ${PWD##*/} 1> /dev/null
+}
 ```
 
 ## Usage
@@ -42,3 +45,7 @@ There are two commands to run, one that fetches the repos' metadata and one that
 `$ repo`
 
 ![Search repositories locally](./search.gif)
+
+### Open web for current repo/folder
+
+`$ web-repo`

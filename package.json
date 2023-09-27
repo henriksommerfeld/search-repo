@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "refresh": "zx refresh.mjs",
-    "search": "zx search.mjs $(./search.sh)"
+    "search": "zx search.mjs $(./search.sh)",
+    "open": "zx open.mjs"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,7 @@
   "author": "Henrik Sommerfeld",
   "license": "MIT",
   "dependencies": {
-    "open": "^8.4.0",
-    "zx": "^6.1.0"
+    "open": "^9.1.0",
+    "zx": "^7.2.3"
   }
 }
