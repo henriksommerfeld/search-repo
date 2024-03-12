@@ -21,13 +21,9 @@ Even though this is written using [🐚 zx](https://github.com/google/zx), that'
 2. Add alias/function for invoking the npm scripts in this repo. I have the following in my `~/.zshrc`:
 
 ```
+alias repo="npm run search --prefix ~/kod/personligt/search-repo $(pwd)"
 alias refresh-repo="npm run refresh --prefix ~/kod/personligt/search-repo"
-repo() {
-  npm run search --prefix ~/kod/personligt/search-repo $(pwd)
-}
-web-repo() {
-  npm run open --prefix ~/kod/personligt/search-repo ${PWD##*/} 1> /dev/null
-}
+alias o="npm run open --prefix ~/kod/personligt/search-repo ${PWD##*/} 1> /dev/null"
 ```
 
 ## Usage
@@ -48,4 +44,4 @@ There are two commands to run, one that fetches the repos' metadata and one that
 
 ### Open web for current repo/folder
 
-`$ web-repo`
+`$ o`
