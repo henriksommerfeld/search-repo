@@ -21,9 +21,13 @@ Even though this is written using [🐚 zx](https://github.com/google/zx), that'
 2. Add alias/function for invoking the npm scripts in this repo. I have the following in my `~/.zshrc`:
 
 ```
-alias repo="npm run search --prefix ~/kod/personligt/search-repo $(pwd)"
+repo () {
+  npm run search --prefix ~/kod/personligt/search-repo $(pwd)
+}
+o () {
+  npm run open --prefix ~/kod/personligt/search-repo ${PWD##*/} 1> /dev/null
+}
 alias refresh-repo="npm run refresh --prefix ~/kod/personligt/search-repo"
-alias o="npm run open --prefix ~/kod/personligt/search-repo ${PWD##*/} 1> /dev/null"
 ```
 
 ## Usage
