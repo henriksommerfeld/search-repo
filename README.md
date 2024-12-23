@@ -22,10 +22,10 @@ Even though this is written using [🐚 zx](https://github.com/google/zx), that'
 
 ```
 repo () {
-  npm run search --prefix ~/kod/personligt/search-repo $(pwd)
+  npm run search --prefix ~/kod/personligt/search-repo "$(pwd)"
 }
 o () {
-  npm run open --prefix ~/kod/personligt/search-repo ${PWD##*/} 1> /dev/null
+  npm run open --prefix ~/kod/personligt/search-repo "${PWD##*/}" 1> /dev/null
 }
 alias refresh-repo="npm run refresh --prefix ~/kod/personligt/search-repo"
 ```
