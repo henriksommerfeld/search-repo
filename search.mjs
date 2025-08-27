@@ -3,6 +3,8 @@ import { getRepoProperty } from './shared.mjs'
 import open from 'open'
 
 $.verbose = false
+process.env.GITHUB_TOKEN = ''
+
 const repo = argv._[0]
 const currentFolder = argv._[1]
 if (!repo) {

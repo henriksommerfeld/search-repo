@@ -2,6 +2,7 @@
 import { filePath } from './shared.mjs'
 
 $.verbose = false
+process.env.GITHUB_TOKEN = ''
 
 console.log(chalk.blue('Fetching repos...'))
 
