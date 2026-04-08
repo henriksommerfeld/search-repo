@@ -15,6 +15,6 @@
   "license": "MIT",
   "dependencies": {
     "open": "^9.1.0",
-    "zx": "^7.2.3"
+    "zx": "^8.8.5"
   }
 }
